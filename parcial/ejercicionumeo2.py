@@ -22,14 +22,19 @@ while(urlbase['next'] is not None):
     urlbase = consultar_personajes(urlbase['next'])
 
 
-
-
 def nombre (item):
-    '''sirve para ordenar por la altura '''
+    '''sirve para ordenar por  altura '''
     return (item['name'])
 
 sw_data.sort(key=nombre)
 
 for index, character in enumerate(sw_data):
     
-    print(character['name'], character['species'], character['homeworld'])
+    print(character['name'],'su raza es: ', character['species'],'Su planeta de origen es :', character['homeworld'])
+
+
+
+    
+for character in sw_data:
+    if(len(character['films'])== 6):
+        print('El personaje',character['name'],'aparece en 6 peliculas')
